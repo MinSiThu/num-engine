@@ -1,9 +1,14 @@
 let Mean = require("./libs/Formula/Mean");
 let Median = require("./libs/Formula/Median");
+let Mode = require("./libs/Formula/Mode");
+
 let Sum = require("./libs/Formula/Sum");
 let Min = require("./libs/Formula/Min");
+let Max = require("./libs/Formula/Max");
+
 let Sort = require("./libs/Formula/Sort");
 let ReverseSort = require("./libs/Formula/ReverseSort");
+
 let Generator = require("./libs/Generator/Generator");
 let RandomFloatGenerator = require("./libs/Generator/RandomFloatGenerator");
 let RandomIntegerGenerator = require("./libs/Generator/RandomIntegerGenerator");
@@ -39,13 +44,18 @@ class NumEngine{
     }
 
     max(){
-        let max = new max(this.num);
+        let max = new Max(this.num);
         return max.exec();
     }
 
     mean(){
         let mean = new Mean(this.num);
         return mean.exec();
+    }
+
+    mode(){
+        let mode = new Mode(this.num);
+        return mode.exec();
     }
 
     sort(){
