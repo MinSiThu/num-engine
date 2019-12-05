@@ -1,5 +1,7 @@
 let Mean = require("./libs/Formula/Mean");
 let Median = require("./libs/Formula/Median");
+let Sum = require("./libs/Formula/Sum");
+let Min = require("./libs/Formula/Min");
 let Sort = require("./libs/Formula/Sort");
 let ReverseSort = require("./libs/Formula/ReverseSort");
 let Generator = require("./libs/Generator/Generator");
@@ -24,6 +26,21 @@ class NumEngine{
 
     getConfiguration(configName){
         return this.config[configName];
+    }
+
+    sum(){
+        let sum = new Sum(this.num);
+        return sum.exec();
+    }
+
+    min(){
+        let min = new Min(this.num);
+        return min.exec();
+    }
+
+    max(){
+        let max = new max(this.num);
+        return max.exec();
     }
 
     mean(){
