@@ -14,6 +14,8 @@ let Generator = require("./libs/Generator/Generator");
 let RandomFloatGenerator = require("./libs/Generator/RandomFloatGenerator");
 let RandomIntegerGenerator = require("./libs/Generator/RandomIntegerGenerator");
 
+let Differential = require("./libs/Differential/Differential");
+
 let initialConfig = {
     sorted:false,
     preExec:false,
@@ -88,6 +90,10 @@ class NumEngine{
         }
         let median = new Median(this.num);
         return median.exec();
+    }
+
+    static differentiate(f){
+        return Differential.differ(f);
     }
 
     static generateRandomInt(lowerLimit,upperLimit){
