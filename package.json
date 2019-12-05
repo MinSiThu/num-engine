@@ -1,0 +1,25 @@
+{
+  "name": "num-engine",
+  "version": "1.0.0",
+  "description": "a statistics package in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinSiThu/num-engine.git"
+  },
+  "keywords": [
+    "statistics",
+    "javascript",
+    "maths",
+    "num"
+  ],
+  "author": "min si thu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MinSiThu/num-engine/issues"
+  },
+  "homepage": "https://github.com/MinSiThu/num-engine#readme"
+}
