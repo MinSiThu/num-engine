@@ -8,6 +8,7 @@ let Max = require("./libs/Formula/Max");
 
 let Sort = require("./libs/Formula/Sort");
 let ReverseSort = require("./libs/Formula/ReverseSort");
+let Shuffle = require("./libs/Formula/Shuffle");
 
 let Generator = require("./libs/Generator/Generator");
 let RandomFloatGenerator = require("./libs/Generator/RandomFloatGenerator");
@@ -75,6 +76,11 @@ class NumEngine{
         return reverseSort.exec();
     }
 
+    shuffle(){
+        let shuffle = new Shuffle(this.num);
+        return shuffle.exec();
+    }
+
     median(){
         if(this.getConfiguration("sorted") == false){
             // if not sorted, sort
@@ -84,22 +90,22 @@ class NumEngine{
         return median.exec();
     }
 
-    generateRandomInt(lowerLimit,upperLimit){
+    static generateRandomInt(lowerLimit,upperLimit){
         let generator = new Generator()
         return generator.generateInt(lowerLimit,upperLimit)
     }
 
-    generateRandomFloat(lowerLimit,upperLimit){
+    static generateRandomFloat(lowerLimit,upperLimit){
         let generator = new Generator();
         return generator.generateFloat(lowerLimit,upperLimit);
     }
 
-    generateRandomFloatArray(count,lowerLimit,upperLimit){
+    static generateRandomFloatArray(count,lowerLimit,upperLimit){
         let floatGenerator = new RandomFloatGenerator();
         return floatGenerator.generate(count,lowerLimit,upperLimit);
     }
 
-    generateRandomIntArray(count,lowerLimit,upperLimit){
+    static generateRandomIntArray(count,lowerLimit,upperLimit){
         let intGenerator = new RandomIntegerGenerator();
         return intGenerator.generate(count,lowerLimit,upperLimit);
     }
