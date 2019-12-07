@@ -160,4 +160,7 @@ class NumEngine{
     }
 }
 
+if(window){
+    window.NumEngine = NumEngine;
+}
 module.exports = NumEngine;
