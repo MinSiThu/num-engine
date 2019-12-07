@@ -1,10 +1,14 @@
 let Mean = require("./libs/Formula/Mean");
+let GeometricMean = require("./libs/Formula/GeometricMean");
 let Median = require("./libs/Formula/Median");
 let Mode = require("./libs/Formula/Mode");
 
+let Product = require("./libs/Formula/Product");
 let Sum = require("./libs/Formula/Sum");
 let Min = require("./libs/Formula/Min");
 let Max = require("./libs/Formula/Max");
+let Variance = require("./libs/Formula/Variance");
+let StandardDeviation = require("./libs/Formula/StandardDeviation");
 
 let Sort = require("./libs/Formula/Sort");
 let ReverseSort = require("./libs/Formula/ReverseSort");
@@ -13,8 +17,12 @@ let Shuffle = require("./libs/Formula/Shuffle");
 let Generator = require("./libs/Generator/Generator");
 let RandomFloatGenerator = require("./libs/Generator/RandomFloatGenerator");
 let RandomIntegerGenerator = require("./libs/Generator/RandomIntegerGenerator");
+let Factorial =  require("./libs/Generator/Factorial");
 
 let Differential = require("./libs/Differential/Differential");
+
+let Chunk = require("./libs/Utils/Chunk");
+let Extent = require("./libs/Utils/Extent");
 
 let initialConfig = {
     sorted:false,
@@ -41,6 +49,11 @@ class NumEngine{
         return sum.exec();
     }
 
+    prodcut(){
+        let product = new Product(this.num);
+        return this.prodcut.exec();
+    }
+
     min(){
         let min = new Min(this.num);
         return min.exec();
@@ -54,6 +67,11 @@ class NumEngine{
     mean(){
         let mean = new Mean(this.num);
         return mean.exec();
+    }
+
+    geometricMean(){
+        let geometricMean = new GeometricMean(this.num);
+        return geometricMean.exec();
     }
 
     mode(){
@@ -92,6 +110,11 @@ class NumEngine{
         return median.exec();
     }
 
+    chunk(chunkSize){
+        let chunk = new Chunk(this.num);
+        return chunk.help(chunkSize);
+    }
+
     static differentiate(f){
         return Differential.differ(f);
     }
@@ -114,6 +137,26 @@ class NumEngine{
     static generateRandomIntArray(count,lowerLimit,upperLimit){
         let intGenerator = new RandomIntegerGenerator();
         return intGenerator.generate(count,lowerLimit,upperLimit);
+    }
+
+    variance(){
+        let variance = new Variance(this.num);
+        return variance.exec(Mean);
+    }
+
+    standardDeviation(){
+        let standardDeviation = new StandardDeviation(this.num);
+        return standardDeviation.exec(Mean,Variance);
+    }
+
+    static factorial(startNumber){
+        let factorial = new Factorial();
+        return factorial.generate(startNumber);
+    }
+
+    extent(){
+        let extent = new Extent(this.num);
+        return extent.help(Min,Max);
     }
 }
 
