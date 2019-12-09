@@ -30,7 +30,7 @@ let numEngine = new NumEngine([1,2,3,4,5],{
 
 # Methods
 
-## add
+## sum
 return the summation value of the array items
 ```js
 let numEngine = new NumEngine([1,2,3,4,5]);
