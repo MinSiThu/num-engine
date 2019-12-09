@@ -1,9 +1,18 @@
 # num-engine
- a statistics package in javascript
+a statistics package in javascript
+
+- lightweight, only 5.83kb
+- easy to use
+- both browser & node.js
+- fast and efficient
 
 # Installation
 ```
 npm install --save num-engine
+```
+
+```html
+<script src="https://unpkg.com/num-engine@1.0.0/output/num-engine.js"></script>
 ```
 
 ```js

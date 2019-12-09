@@ -1,6 +1,6 @@
 {
   "name": "num-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a statistics package in javascript",
   "main": "index.js",
   "scripts": {
